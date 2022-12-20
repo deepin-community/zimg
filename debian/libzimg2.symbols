@@ -1,0 +1,16 @@
+libzimg.so.2 libzimg2 #MINVER#
+* Build-Depends-Package: libzimg-dev
+ zimg_clear_last_error@Base 0.3.1
+ zimg_filter_graph_build@Base 0.3.1
+ zimg_filter_graph_free@Base 0.3.1
+ zimg_filter_graph_get_input_buffering@Base 0.3.1
+ zimg_filter_graph_get_output_buffering@Base 0.3.1
+ zimg_filter_graph_get_tmp_size@Base 0.3.1
+ zimg_filter_graph_process@Base 0.3.1
+ zimg_get_api_version@Base 0.3.1
+ zimg_get_last_error@Base 0.3.1
+ zimg_get_version_info@Base 0.3.1
+ zimg_graph_builder_params_default@Base 0.3.1
+ zimg_image_format_default@Base 0.3.1
+ zimg_select_buffer_mask@Base 0.3.1
+ (c++|regex|optional)"std::.*" 0.3.1

@@ -1,0 +1,36 @@
+Source: zimg
+Section: libs
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders: Sebastian Ramacher <sramacher@debian.org>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Homepage: https://github.com/sekrit-twc/zimg
+Vcs-Git: https://salsa.debian.org/multimedia-team/zimg.git
+Vcs-Browser: https://salsa.debian.org/multimedia-team/zimg
+Rules-Requires-Root: no
+
+Package: libzimg-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libzimg2 (= ${binary:Version}), ${misc:Depends}
+Description: scaling, colorspace, depth conversion library (development files)
+ The "z" library implements the commonly required image processing basics of
+ scaling, colorspace conversion, and depth conversion. A simple API enables
+ conversion between any supported formats to operate with minimal knowledge
+ from the programmer.
+ .
+ This package contains development files.
+
+Package: libzimg2
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: scaling, colorspace, depth conversion library (shared library)
+ The "z" library implements the commonly required image processing basics of
+ scaling, colorspace conversion, and depth conversion. A simple API enables
+ conversion between any supported formats to operate with minimal knowledge
+ from the programmer.
+ .
+ This package constains the shared library.

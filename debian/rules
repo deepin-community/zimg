@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/architecture.mk
+
+%:
+	dh $@
+
+ifeq (arm64,$(DEB_HOST_ARCH))
+override_dh_dwz:
+	# dwz fails with Unknown DWARF DW_OP_0 on arm64 (see LP#1903748)
+endif

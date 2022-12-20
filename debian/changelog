@@ -1,0 +1,30 @@
+zimg (3.0.3+ds1-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Fri, 11 Nov 2022 18:06:43 +0800
+
+zimg (3.0.3+ds1-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control: Bump Standards-Version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 09 Sep 2021 22:06:58 +0200
+
+zimg (3.0.2+ds1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 10 Jul 2021 12:23:10 +0200
+
+zimg (3.0.1+ds1-2) unstable; urgency=medium
+
+  * debian/rules: Skip dh_dwz on arm64 to workaround LP#1903748
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 28 Feb 2021 18:22:04 +0100
+
+zimg (3.0.1+ds1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #864888)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 13 Feb 2021 16:33:17 +0100

@@ -1,0 +1,4 @@
+usr/lib/*/*.la
+usr/share/doc/zimg/COPYING
+usr/share/doc/zimg/ChangeLog
+usr/share/doc/zimg/README.md
