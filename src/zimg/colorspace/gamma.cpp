@@ -63,6 +63,8 @@ float inverse_ootf_st2084(float x) noexcept
 
 float rec_709_oetf(float x) noexcept
 {
+	x = std::max(x, 0.0f);
+
 	if (x < REC709_BETA)
 		x = x * 4.5f;
 	else
@@ -73,6 +75,8 @@ float rec_709_oetf(float x) noexcept
 
 float rec_709_inverse_oetf(float x) noexcept
 {
+	x = std::max(x, 0.0f);
+
 	if (x < 4.5f * REC709_BETA)
 		x = x / 4.5f;
 	else
@@ -123,6 +127,8 @@ float rec_470bg_inverse_oetf(float x) noexcept
 
 float smpte_240m_oetf(float x) noexcept
 {
+	x = std::max(x, 0.0f);
+
 	if (x < 4.0f * SMPTE_240M_BETA)
 		x = x / 4.0f;
 	else
@@ -133,6 +139,8 @@ float smpte_240m_oetf(float x) noexcept
 
 float smpte_240m_inverse_oetf(float x) noexcept
 {
+	x = std::max(x, 0.0f);
+
 	if (x < SMPTE_240M_BETA)
 		x = x * 4.0f;
 	else
@@ -190,6 +198,8 @@ float rec_1886_inverse_eotf(float x) noexcept
 
 float srgb_eotf(float x) noexcept
 {
+	x = std::max(x, 0.0f);
+
 	if (x < 12.92f * SRGB_BETA)
 		x = x / 12.92f;
 	else
@@ -200,6 +210,8 @@ float srgb_eotf(float x) noexcept
 
 float srgb_inverse_eotf(float x) noexcept
 {
+	x = std::max(x, 0.0f);
+
 	if (x < SRGB_BETA)
 		x = x * 12.92f;
 	else
@@ -261,6 +273,16 @@ float st_2084_inverse_eotf(float x) noexcept
 	}
 
 	return x;
+}
+
+float st_428_eotf(float x) noexcept
+{
+	return x < 0.0f ? 0.0f : 52.37f / 48.0f * zimg_x_powf(x, 2.6f);
+}
+
+float st_428_inverse_eotf(float x) noexcept
+{
+	return x < 0.0f ? 0.0f : zimg_x_powf(x * (48.0f / 52.37f), 1.0f / 2.6f);
 }
 
 // Applies a per-channel correction instead of the iterative method specified in Rec.2100.
@@ -332,6 +354,10 @@ TransferFunction select_transfer_function(TransferCharacteristics transfer, doub
 		func.to_gamma = scene_referred ? st_2084_oetf : st_2084_inverse_eotf;
 		func.to_linear_scale = static_cast<float>(ST2084_PEAK_LUMINANCE / peak_luminance);
 		func.to_gamma_scale = static_cast<float>(peak_luminance / ST2084_PEAK_LUMINANCE);
+		break;
+	case TransferCharacteristics::ST_428:
+		func.to_linear = st_428_eotf;
+		func.to_gamma = st_428_inverse_eotf;
 		break;
 	case TransferCharacteristics::ARIB_B67:
 		func.to_linear = scene_referred ? arib_b67_inverse_oetf : arib_b67_eotf;

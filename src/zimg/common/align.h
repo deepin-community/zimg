@@ -15,8 +15,8 @@ constexpr int ALIGNMENT_RELAXED = 32;
 constexpr int ALIGNMENT = 16;
 constexpr int ALIGNMENT_RELAXED = 16;
 #else
-constexpr int ALIGNMENT = sizeof(long double);
-constexpr int ALIGNMENT_RELAXED = sizeof(long double);
+constexpr int ALIGNMENT = alignof(long double);
+constexpr int ALIGNMENT_RELAXED = alignof(long double);
 #endif
 
 /**
@@ -40,7 +40,7 @@ constexpr T floor_n(T x, unsigned n) { return x & ~static_cast<T>(n - 1); }
  */
 template <class T>
 struct AlignmentOf {
-	static constexpr unsigned value = ALIGNMENT / sizeof(T);
+	static constexpr unsigned value = ALIGNMENT >= sizeof(T) ? ALIGNMENT / sizeof(T) : 1;
 };
 
 } // namespace zimg
