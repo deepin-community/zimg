@@ -1,8 +1,26 @@
-zimg (3.0.3+ds1-deepin1) unstable; urgency=medium
+zimg (3.0.6+ds1-1) unstable; urgency=medium
 
-  * Rebuild
+  * New upstream version 3.0.6+ds1
+  * debian/control: Bump Standards-Version
 
- -- Deepin Packages Builder <packages@deepin.org>  Fri, 11 Nov 2022 18:06:43 +0800
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 17 Aug 2025 23:03:58 +0200
+
+zimg (3.0.5+ds1-1) unstable; urgency=medium
+
+  * New upstream version 3.0.5+ds1
+  * debian/control: Bump Standards-Version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 17 Jul 2023 22:02:49 +0200
+
+zimg (3.0.4+ds1-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+
+  [ Sebastian Ramacher ]
+  * New upstream version 3.0.4+ds1
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 23 Apr 2022 15:27:21 +0200
 
 zimg (3.0.3+ds1-1) unstable; urgency=medium
 

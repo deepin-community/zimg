@@ -1,3 +1,20 @@
+3.0.6
+colorspace: fix AVX-512 sRGB/709 with negative input (introduced in 2.8)
+resize: fix AVX-512 downscaling with certain tap counts (introduced in 2.6)
+
+3.0.5
+colorspace: add ST.428-1 (gamma 2.6) transfer function
+depth: fix AVX-512 integer to float border handling (introduced in 2.6)
+depth: fix NEON dither border handling (introduced in 3.0)
+graph: fix clipping in alpha premultiplication (introduced in 3.0)
+x86: optimizations for AMD Zen4 processors
+
+3.0.4
+colorspace: fix ARIB STD-B67 constant-luminance EOTF (introduced in 2.6)
+colorspace: filter negative values from sRGB-like transfer functions
+common: compilation fixes on esoteric architectures
+graph: fix active region with chroma subsampling
+
 3.0.3
 depth: fix out-of-bounds read in SSE2/AVX2 error diffusion (introduced in 2.5)
 colorspace: revert SMPTE 240M behavior change (introduced in 3.0.2)

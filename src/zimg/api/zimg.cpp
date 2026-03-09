@@ -37,7 +37,7 @@ constexpr unsigned API_VERSION_2_4 = ZIMG_MAKE_API_VERSION(2, 4);
 thread_local zimg_error_code_e g_last_error = ZIMG_ERROR_SUCCESS;
 thread_local std::string g_last_error_msg;
 
-constexpr unsigned VERSION_INFO[] = { 3, 0, 3 };
+constexpr unsigned VERSION_INFO[] = { 3, 0, 6 };
 
 
 template <class T, class U>
@@ -266,7 +266,7 @@ zimg::colorspace::TransferCharacteristics translate_transfer(zimg_transfer_chara
 {
 	using zimg::colorspace::TransferCharacteristics;
 
-	static SM_CONSTEXPR_14 const zimg::static_map<zimg_transfer_characteristics_e, TransferCharacteristics, 15> map{
+	static SM_CONSTEXPR_14 const zimg::static_map<zimg_transfer_characteristics_e, TransferCharacteristics, 16> map{
 		{ ZIMG_TRANSFER_BT709,         TransferCharacteristics::REC_709 },
 		{ ZIMG_TRANSFER_UNSPECIFIED,   TransferCharacteristics::UNSPECIFIED },
 		{ ZIMG_TRANSFER_ST240_M,       TransferCharacteristics::SMPTE_240M },
@@ -281,6 +281,7 @@ zimg::colorspace::TransferCharacteristics translate_transfer(zimg_transfer_chara
 		{ ZIMG_TRANSFER_LOG_100,       TransferCharacteristics::LOG_100 },
 		{ ZIMG_TRANSFER_LOG_316,       TransferCharacteristics::LOG_316 },
 		{ ZIMG_TRANSFER_ST2084,        TransferCharacteristics::ST_2084 },
+		{ ZIMG_TRANSFER_ST428,         TransferCharacteristics::ST_428 },
 		{ ZIMG_TRANSFER_ARIB_B67,      TransferCharacteristics::ARIB_B67 },
 	};
 	return search_itu_enum_map(map, transfer, "unrecognized transfer characteristics");
